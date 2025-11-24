@@ -1,0 +1,92 @@
+cabal-version:      3.0
+name:               aoc2025
+version:            0.1.0.0
+synopsis:           Advent of Code 2025
+description:        Haskell solutions for the Advent of Code 2025 holiday programming event
+license:            Unlicense
+license-file:       LICENSE
+author:             Stian Sørby
+maintainer:         51554341+ssouthcity@users.noreply.github.com
+build-type:         Simple
+
+common warnings
+    ghc-options: -Wall
+
+common day
+    import:           warnings
+    hs-source-dirs:   app
+    build-depends:    
+        base ^>=4.20.2.0
+      , text ^>=2.1.3
+      , aoc2025
+    default-language: Haskell2010
+
+library
+    import:           warnings
+    hs-source-dirs:   src
+    exposed-modules:
+      Days.Day01
+      Days.Day02
+      Days.Day03
+      Days.Day04
+      Days.Day05
+      Days.Day06
+      Days.Day07
+      Days.Day08
+      Days.Day09
+      Days.Day10
+      Days.Day11
+      Days.Day12
+      Solve
+    build-depends:    
+        base ^>=4.20.2.0
+      , text ^>=2.1.3
+    default-language: Haskell2010
+
+executable day01
+    import:           day
+    main-is:          Day01.hs
+
+executable day02
+    import:           day
+    main-is:          Day02.hs
+
+executable day03
+    import:           day
+    main-is:          Day03.hs
+
+executable day04
+    import:           day
+    main-is:          Day04.hs
+
+executable day05
+    import:           day
+    main-is:          Day05.hs
+
+executable day06
+    import:           day
+    main-is:          Day06.hs
+
+executable day07
+    import:           day
+    main-is:          Day07.hs
+
+executable day08
+    import:           day
+    main-is:          Day08.hs
+
+executable day09
+    import:           day
+    main-is:          Day09.hs
+
+executable day10
+    import:           day
+    main-is:          Day10.hs
+
+executable day11
+    import:           day
+    main-is:          Day11.hs
+
+executable day12
+    import:           day
+    main-is:          Day12.hs
