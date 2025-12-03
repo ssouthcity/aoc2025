@@ -1,3 +1,5 @@
+{-# LANGUAGE TypeApplications #-}
+
 module Days.Day02 (solveA, solveB) where
 
 import Data.Attoparsec.Text
@@ -20,7 +22,7 @@ isRepeatedTwice s
   | otherwise = let (a, b) = splitAt (length s `div` 2) s in a == b
 
 chunksOf :: Int -> String -> [String]
-chunksOf n [] = []
+chunksOf _ [] = []
 chunksOf n s  = Prelude.take n s : chunksOf n (drop n s)
 
 permutations :: String -> [[String]]
@@ -37,7 +39,7 @@ isRepeatedN :: String -> Bool
 isRepeatedN = any allEqual . permutations
 
 solveA :: Text -> Text
-solveA = T.show . sum . map read . concat . map (filter isRepeatedTwice . map show . Ix.range) . mustParse ranges
+solveA = T.show . sum . map (read @Int) . concat . map (filter isRepeatedTwice . map show . Ix.range) . mustParse ranges
 
 solveB :: Text -> Text
-solveB = T.show . sum . map read . concat . map (filter isRepeatedN . map show . Ix.range) . mustParse ranges
+solveB = T.show . sum . map (read @Int) . concat . map (filter isRepeatedN . map show . Ix.range) . mustParse ranges
