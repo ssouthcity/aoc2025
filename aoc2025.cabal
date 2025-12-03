@@ -15,7 +15,7 @@ common warnings
 common day
     import:           warnings
     hs-source-dirs:   app
-    build-depends:    
+    build-depends:
         base ^>=4.20.2.0
       , text ^>=2.1.3
       , aoc2025
@@ -37,10 +37,12 @@ library
       Days.Day10
       Days.Day11
       Days.Day12
+      Parse
       Solve
     build-depends:    
-        base ^>=4.20.2.0
-      , text ^>=2.1.3
+        base       ^>=4.20.2.0
+      , text       ^>=2.1.3
+      , attoparsec ^>=0.14.4
     default-language: Haskell2010
 
 executable day01
