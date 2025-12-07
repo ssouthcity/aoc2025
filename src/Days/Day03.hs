@@ -1,7 +1,7 @@
 module Days.Day03 (solveA, solveB) where
 
 import Data.Attoparsec.Text
-import Data.Char (isDigit, digitToInt)
+import Data.Char (digitToInt, isDigit)
 import Data.Text (Text)
 import qualified Data.Text as T
 import Parse (mustParse)
@@ -15,7 +15,7 @@ banks :: Parser [[Joltage]]
 banks = joltages `sepBy` endOfLine
 
 outputJoltageN :: Int -> [Joltage] -> Joltage
-outputJoltageN n xs = go 0 n xs
+outputJoltageN n js = go 0 n js
   where
     go v 0 _ = v
     go v i xs =

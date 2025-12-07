@@ -39,8 +39,8 @@ mergeRanges = reverse . foldl go [] . sortOn fst
 
 solveA :: Text -> Text
 solveA i =
-  let (rs, ingredients) = mustParse input i
-      fresh = filter (inAnyRange rs) ingredients
+  let (rs, is) = mustParse input i
+      fresh = filter (inAnyRange rs) is
    in T.show $ length fresh
 
 solveB :: Text -> Text
