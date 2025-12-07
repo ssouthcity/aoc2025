@@ -23,9 +23,9 @@ applyRot x (L, y) = x - y
 applyRot x (R, y) = x + y
 
 countSweeps :: Int -> Int -> Rot -> Int
-countSweeps count x (dir, y) =
+countSweeps count x (d, y) =
   let delta = y `mod` count
-      extra = case dir of
+      extra = case d of
         L | x > 0 && x <= delta -> 1
         R | x > 0 && x >= count - delta -> 1
         _ -> 0
